@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>宠物图片生成器</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffe0b2 0%, #b3e5fc 100%);
+      padding: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 28px;
+      color: #4a4a6a;
+      margin-bottom: 8px;
+    }
+    .subtitle { color: #888; margin-bottom: 24px; font-size: 15px; }
+    .canvas-wrap {
+      width: 360px;
+      height: 360px;
+      margin: 0 auto 24px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #f5f5f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,0.6);
+    }
+    .canvas-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .placeholder { color: #bbb; font-size: 15px; }
+    button {
+      background: linear-gradient(135deg, #ff8a65, #ff6e40);
+      color: #fff;
+      border: none;
+      padding: 14px 40px;
+      font-size: 17px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(255, 110, 64, 0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    button:hover { transform: translateY(-2px); box-shadow: 0 9px 24px rgba(255,110,64,0.5); }
+    button:active { transform: translateY(0); }
+    button:disabled { opacity: 0.6; cursor: wait; }
+    .info {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .tag {
+      background: #fff;
+      border: 1px solid #e0e0e8;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: #6a6a8a;
+    }
+    .tag b { color: #ff6e40; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🐾 宠物图片生成器</h1>
+    <p class="subtitle">点击下方按钮，随机生成一只可爱卡通宠物</p>
+    <div class="canvas-wrap">
+      <span class="placeholder" id="placeholder">还没有宠物哦～点下面按钮吧</span>
+      <img id="petImg" alt="生成的宠物" style="display:none" />
+    </div>
+    <button id="genBtn">生成宠物</button>
+    <div class="info" id="info"></div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('genBtn');
+    const img = document.getElementById('petImg');
+    const placeholder = document.getElementById('placeholder');
+    const info = document.getElementById('info');
+
+    const labels = {
+      pet_type: '种类', color: '配色', eye_style: '眼睛',
+      mouth_style: '嘴巴', accessory: '装饰', blush: '腮红'
+    };
+
+    btn.addEventListener('click', async () => {
+      btn.disabled = true;
+      btn.textContent = '生成中...';
+      try {
+        const res = await fetch('/generate');
+        const data = await res.json();
+        img.src = data.image;
+        img.style.display = 'block';
+        placeholder.style.display = 'none';
+        info.innerHTML = '';
+        for (const [k, v] of Object.entries(data.info)) {
+          const tag = document.createElement('span');
+          tag.className = 'tag';
+          tag.innerHTML = `${labels[k] || k}：<b>${v}</b>`;
+          info.appendChild(tag);
+        }
+      } catch (e) {
+        alert('生成失败，请重试');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '再生成一只';
+      }
+    });
+  </script>
+</body>
+</html>
