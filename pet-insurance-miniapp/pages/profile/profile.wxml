@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="card">
+    <view class="title">我的测算</view>
+    <view class="subtitle" wx:if="{{latestQuote}}">{{latestQuote.form.petName}} · {{latestQuote.form.city}} · {{latestQuote.form.budget}}</view>
+    <view class="subtitle" wx:else>还没有测算记录。</view>
+    <button class="primary-btn submit" bindtap="goQuote">重新测算</button>
+  </view>
+
+  <view class="section card">
+    <view class="title block-title">线索记录</view>
+    <view class="lead" wx:for="{{leads}}" wx:key="id">
+      <view class="row">
+        <view class="lead-name">{{item.form.petName}}</view>
+        <view class="status">{{item.status}}</view>
+      </view>
+      <view class="subtitle">手机号：{{item.form.phone}}</view>
+      <view class="subtitle">产品：{{item.productId || '人工咨询'}}</view>
+      <view class="subtitle">来源：{{item.tracking.scene || '自然访问'}}</view>
+    </view>
+    <view class="subtitle" wx:if="{{!leads.length}}">暂无线索记录。</view>
+  </view>
+</view>

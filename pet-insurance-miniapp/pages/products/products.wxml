@@ -1,0 +1,26 @@
+<view class="page">
+  <view class="tabs">
+    <view class="tab {{activeType === 'all' ? 'active' : ''}}" data-type="all" bindtap="setType">全部</view>
+    <view class="tab {{activeType === 'cat' ? 'active' : ''}}" data-type="cat" bindtap="setType">猫咪</view>
+    <view class="tab {{activeType === 'dog' ? 'active' : ''}}" data-type="dog" bindtap="setType">狗狗</view>
+  </view>
+
+  <view class="product-card card" wx:for="{{filteredProducts}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+    <view class="row">
+      <view>
+        <view class="title product-title">{{item.name}}</view>
+        <view class="subtitle">{{item.companyName}} · {{item.category}}</view>
+      </view>
+      <view class="price">¥{{item.priceMin}}起</view>
+    </view>
+    <view class="summary">{{item.summary}}</view>
+    <view>
+      <text class="tag" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view class="facts">
+      <view>保额 {{item.coverageAmount}} 元</view>
+      <view>免赔 {{item.deductible}} 元</view>
+      <view>等待期 {{item.waitingPeriod}} 天</view>
+    </view>
+  </view>
+</view>

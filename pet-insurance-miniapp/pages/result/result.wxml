@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="card" wx:if="{{quote}}">
+    <view class="title">{{quote.form.petName}} 的保障建议</view>
+    <view class="subtitle">{{quote.form.petTypeLabel}} · {{quote.form.city}} · {{quote.form.budget}}</view>
+    <view class="notice" wx:for="{{quote.recommendation.attention}}" wx:key="*this">{{item}}</view>
+  </view>
+
+  <view class="section card result-card" wx:for="{{items}}" wx:key="product.id">
+    <view class="row">
+      <view>
+        <view class="title product-title">{{item.product.name}}</view>
+        <view class="subtitle">{{item.product.companyName}}</view>
+      </view>
+      <view class="price">约 ¥{{item.estimatedPrice}}/月</view>
+    </view>
+    <view class="summary">{{item.product.summary}}</view>
+    <view>
+      <text class="tag" wx:for="{{item.product.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view class="divider"></view>
+    <view class="facts">
+      <view>保额 {{item.product.coverageAmount}} 元</view>
+      <view>免赔 {{item.product.deductible}} 元</view>
+      <view>等待期 {{item.product.waitingPeriod}} 天</view>
+    </view>
+    <view class="actions-inline">
+      <button class="secondary-btn" data-id="{{item.product.id}}" bindtap="goDetail">详情</button>
+      <button class="primary-btn" data-id="{{item.product.id}}" bindtap="saveAndApply">留资投保</button>
+    </view>
+  </view>
+
+  <view class="empty card" wx:if="{{quote && !items.length}}">
+    <view class="title product-title">暂无直接匹配方案</view>
+    <view class="subtitle">可先提交线索，由顾问根据宠物健康情况进行人工确认。</view>
+    <button class="primary-btn submit" bindtap="saveConsultLead">提交人工咨询</button>
+  </view>
+</view>

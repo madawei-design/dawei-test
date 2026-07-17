@@ -1,0 +1,88 @@
+.hero {
+  background: linear-gradient(135deg, #0f7c6b, #2d9f7f 58%, #eab85c);
+  border-radius: 18rpx;
+  color: #ffffff;
+  padding: 44rpx 36rpx;
+}
+
+.hero-kicker {
+  font-size: 24rpx;
+  opacity: 0.88;
+}
+
+.hero-title {
+  font-size: 48rpx;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-top: 16rpx;
+  max-width: 560rpx;
+}
+
+.hero-copy {
+  font-size: 28rpx;
+  line-height: 1.6;
+  margin-top: 18rpx;
+  opacity: 0.92;
+}
+
+.hero-btn {
+  margin: 34rpx 0 0;
+}
+
+.grid {
+  display: grid;
+  gap: 16rpx;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.metric {
+  background: #ffffff;
+  border: 1rpx solid #e4e8ee;
+  border-radius: 12rpx;
+  padding: 24rpx 10rpx;
+  text-align: center;
+}
+
+.metric-value {
+  color: #0f7c6b;
+  font-size: 34rpx;
+  font-weight: 800;
+}
+
+.metric-label {
+  color: #667281;
+  font-size: 22rpx;
+  margin-top: 8rpx;
+}
+
+.small-title {
+  font-size: 32rpx;
+}
+
+.mini-btn {
+  font-size: 24rpx;
+  line-height: 64rpx;
+  min-width: 112rpx;
+  padding: 0;
+}
+
+.product-preview {
+  border-top: 1rpx solid #edf0f3;
+  display: flex;
+  gap: 20rpx;
+  justify-content: space-between;
+  padding: 24rpx 0 0;
+  margin-top: 24rpx;
+}
+
+.product-name {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.price {
+  color: #d56a2d;
+  flex: 0 0 auto;
+  font-size: 28rpx;
+  font-weight: 700;
+}
