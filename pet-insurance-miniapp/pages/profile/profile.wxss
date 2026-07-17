@@ -1,0 +1,29 @@
+.submit {
+  margin-top: 24rpx;
+}
+
+.block-title {
+  font-size: 30rpx;
+}
+
+.lead {
+  border-top: 1rpx solid #edf0f3;
+  padding: 22rpx 0;
+}
+
+.lead:first-of-type {
+  border-top: 0;
+}
+
+.lead-name {
+  font-size: 29rpx;
+  font-weight: 700;
+}
+
+.status {
+  background: #e7f5f2;
+  border-radius: 999rpx;
+  color: #0f7c6b;
+  font-size: 22rpx;
+  padding: 6rpx 14rpx;
+}

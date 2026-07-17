@@ -1,0 +1,46 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-kicker">宠物医疗保障</view>
+    <view class="hero-title">给猫狗配置一份看病底气</view>
+    <view class="hero-copy">按宠物年龄、城市和健康情况，快速匹配适合的保险方案。</view>
+    <button class="primary-btn hero-btn" bindtap="goQuote">立即测算保费</button>
+  </view>
+
+  <view class="section grid">
+    <view class="metric">
+      <view class="metric-value">2万+</view>
+      <view class="metric-label">医疗保障</view>
+    </view>
+    <view class="metric">
+      <view class="metric-value">30天</view>
+      <view class="metric-label">常见等待期</view>
+    </view>
+    <view class="metric">
+      <view class="metric-value">猫狗</view>
+      <view class="metric-label">主流可投</view>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="row">
+      <view>
+        <view class="title small-title">热门方案</view>
+        <view class="subtitle">覆盖医疗、意外和综合保障</view>
+      </view>
+      <button class="secondary-btn mini-btn" bindtap="goProducts">全部</button>
+    </view>
+    <view class="product-preview" wx:for="{{hotProducts}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+      <view>
+        <view class="product-name">{{item.name}}</view>
+        <view class="subtitle">{{item.summary}}</view>
+      </view>
+      <view class="price">¥{{item.priceMin}}起</view>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="title small-title">推广追踪</view>
+    <view class="subtitle" wx:if="{{tracking.scene}}">当前来源：{{tracking.scene}}</view>
+    <view class="subtitle" wx:else>未携带渠道参数，默认记录为自然访问。</view>
+  </view>
+</view>

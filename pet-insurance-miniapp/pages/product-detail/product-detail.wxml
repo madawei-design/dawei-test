@@ -1,0 +1,47 @@
+<view class="page" wx:if="{{product}}">
+  <view class="card">
+    <view class="title">{{product.name}}</view>
+    <view class="subtitle">{{product.companyName}} · {{product.category}}</view>
+    <view class="summary">{{product.summary}}</view>
+    <view>
+      <text class="tag" wx:for="{{product.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="title block-title">保障概览</view>
+    <view class="detail-grid">
+      <view>
+        <view class="muted">保障额度</view>
+        <view class="strong">{{product.coverageAmount}} 元</view>
+      </view>
+      <view>
+        <view class="muted">免赔额</view>
+        <view class="strong">{{product.deductible}} 元</view>
+      </view>
+      <view>
+        <view class="muted">等待期</view>
+        <view class="strong">{{product.waitingPeriod}} 天</view>
+      </view>
+      <view>
+        <view class="muted">价格</view>
+        <view class="strong">¥{{product.priceMin}}-{{product.priceMax}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="title block-title">保障亮点</view>
+    <view class="list-item" wx:for="{{product.highlights}}" wx:key="*this">{{item}}</view>
+  </view>
+
+  <view class="section card">
+    <view class="title block-title">常见不保范围</view>
+    <view class="list-item warn" wx:for="{{product.exclusions}}" wx:key="*this">{{item}}</view>
+  </view>
+
+  <view class="actions">
+    <button class="secondary-btn" bindtap="goProducts">更多产品</button>
+    <button class="primary-btn" bindtap="goQuote">测算保费</button>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+.notice {
+  background: #fff7e8;
+  border: 1rpx solid #f0d19e;
+  border-radius: 10rpx;
+  color: #7b4b24;
+  font-size: 24rpx;
+  line-height: 1.55;
+  margin-top: 18rpx;
+  padding: 18rpx;
+}
+
+.product-title {
+  font-size: 31rpx;
+}
+
+.price {
+  color: #d56a2d;
+  flex: 0 0 auto;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.summary {
+  color: #4b5867;
+  line-height: 1.6;
+  margin: 20rpx 0;
+}
+
+.facts {
+  color: #667281;
+  display: grid;
+  font-size: 23rpx;
+  gap: 12rpx;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.actions-inline {
+  display: grid;
+  gap: 16rpx;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 28rpx;
+}
+
+.submit {
+  margin-top: 26rpx;
+}

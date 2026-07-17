@@ -1,0 +1,54 @@
+.tabs {
+  background: #ffffff;
+  border: 1rpx solid #e4e8ee;
+  border-radius: 12rpx;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 8rpx;
+}
+
+.tab {
+  border-radius: 8rpx;
+  color: #667281;
+  font-size: 26rpx;
+  padding: 18rpx 0;
+  text-align: center;
+}
+
+.tab.active {
+  background: #0f7c6b;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.product-card {
+  margin-top: 20rpx;
+}
+
+.product-title {
+  font-size: 32rpx;
+}
+
+.price {
+  color: #d56a2d;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.summary {
+  color: #4b5867;
+  font-size: 26rpx;
+  line-height: 1.6;
+  margin: 20rpx 0;
+}
+
+.facts {
+  border-top: 1rpx solid #edf0f3;
+  color: #667281;
+  display: grid;
+  font-size: 23rpx;
+  gap: 12rpx;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 12rpx;
+  padding-top: 20rpx;
+}

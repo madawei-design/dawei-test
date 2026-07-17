@@ -1,0 +1,9 @@
+.two-cols {
+  display: grid;
+  gap: 18rpx;
+  grid-template-columns: 1fr 1fr;
+}
+
+.submit {
+  margin-top: 34rpx;
+}

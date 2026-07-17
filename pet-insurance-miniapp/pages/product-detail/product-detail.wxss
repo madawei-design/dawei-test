@@ -1,0 +1,51 @@
+.summary {
+  color: #4b5867;
+  line-height: 1.65;
+  margin: 22rpx 0;
+}
+
+.block-title {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 18rpx;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.strong {
+  color: #162331;
+  font-size: 30rpx;
+  font-weight: 800;
+  margin-top: 8rpx;
+}
+
+.list-item {
+  border-top: 1rpx solid #edf0f3;
+  color: #344253;
+  line-height: 1.6;
+  padding: 18rpx 0;
+}
+
+.list-item:first-of-type {
+  border-top: 0;
+}
+
+.warn {
+  color: #7b4b24;
+}
+
+.actions {
+  background: #ffffff;
+  border-top: 1rpx solid #e4e8ee;
+  bottom: 0;
+  display: grid;
+  gap: 16rpx;
+  grid-template-columns: 1fr 1fr;
+  left: 0;
+  padding: 18rpx 28rpx;
+  position: fixed;
+  right: 0;
+}
