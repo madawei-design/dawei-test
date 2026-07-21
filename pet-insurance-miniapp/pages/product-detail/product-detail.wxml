@@ -8,6 +8,11 @@
     </view>
   </view>
 
+  <view class="section card" wx:if="{{isDirectOrder}}">
+    <view class="title block-title">立即投保</view>
+    <view class="subtitle">这款狗狗医疗险已开放小程序内下单，填写宠物和投保人信息后即可提交订单。</view>
+  </view>
+
   <view class="section card">
     <view class="title block-title">保障概览</view>
     <view class="detail-grid">
@@ -40,8 +45,13 @@
     <view class="list-item warn" wx:for="{{product.exclusions}}" wx:key="*this">{{item}}</view>
   </view>
 
-  <view class="actions">
+  <view class="actions" wx:if="{{!isDirectOrder}}">
     <button class="secondary-btn" bindtap="goProducts">更多产品</button>
     <button class="primary-btn" bindtap="goQuote">测算保费</button>
+  </view>
+
+  <view class="actions" wx:else>
+    <button class="secondary-btn" bindtap="goProducts">更多产品</button>
+    <button class="primary-btn" bindtap="goOrder">立即下单</button>
   </view>
 </view>

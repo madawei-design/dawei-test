@@ -1,6 +1,7 @@
 const TRACKING_KEY = 'pet_insurance_tracking';
 const LEADS_KEY = 'pet_insurance_leads';
 const QUOTE_KEY = 'pet_insurance_latest_quote';
+const ORDER_KEY = 'pet_insurance_orders';
 
 function readTracking() {
   return wx.getStorageSync(TRACKING_KEY) || {};
@@ -45,11 +46,29 @@ function readLeads() {
   return wx.getStorageSync(LEADS_KEY) || [];
 }
 
+function saveOrder(order) {
+  const orders = wx.getStorageSync(ORDER_KEY) || [];
+  const nextOrder = Object.assign({}, order, {
+    id: 'order_' + Date.now(),
+    createdAt: new Date().toISOString(),
+    status: '待支付确认'
+  });
+  orders.unshift(nextOrder);
+  wx.setStorageSync(ORDER_KEY, orders.slice(0, 50));
+  return nextOrder;
+}
+
+function readOrders() {
+  return wx.getStorageSync(ORDER_KEY) || [];
+}
+
 module.exports = {
   readTracking,
   writeTracking,
   saveLatestQuote,
   readLatestQuote,
   saveLead,
-  readLeads
+  readLeads,
+  saveOrder,
+  readOrders
 };

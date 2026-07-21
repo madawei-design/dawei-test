@@ -1,5 +1,27 @@
 const products = [
   {
+    id: 'dog-medical-flagship',
+    name: '狗狗尊享医疗险',
+    companyName: '安心宠保合作平台',
+    petTypes: ['dog'],
+    category: '医疗险',
+    minAgeMonth: 2,
+    maxAgeMonth: 96,
+    coverageAmount: 30000,
+    deductible: 200,
+    waitingPeriod: 20,
+    priceMin: 49,
+    priceMax: 129,
+    tags: ['门诊住院', '意外医疗', '幼犬可投'],
+    summary: '适合 2 个月至 8 岁狗狗，覆盖常见疾病、意外就诊和住院治疗。',
+    highlights: ['最高 3 万医疗保障', '覆盖门诊、住院与手术医疗', '支持常见皮肤病、肠胃炎等治疗费用报销'],
+    exclusions: ['既往症', '等待期内疾病', '美容、绝育和非治疗性项目'],
+    applyUrl: 'https://example.com/apply/dog-medical-flagship',
+    recommendWeight: 98,
+    featured: true,
+    orderLabel: '立即下单'
+  },
+  {
     id: 'cat-care-plus',
     name: '猫咪安心医疗险',
     companyName: '示例财险',

@@ -1,10 +1,10 @@
 const { products } = require('../../utils/data');
-const { readTracking, writeTracking } = require('../../utils/tracking');
 
 Page({
   data: {
     hotProducts: [],
-    tracking: {}
+    tracking: {},
+    featuredDogProductId: 'dog-medical-flagship'
   },
 
   onLoad(options) {
@@ -31,5 +31,9 @@ Page({
   goDetail(event) {
     const id = event.currentTarget.dataset.id;
     wx.navigateTo({ url: '/pages/product-detail/product-detail?id=' + id });
+  },
+
+  goDogOrder() {
+    wx.navigateTo({ url: '/pages/order/order?productId=' + this.data.featuredDogProductId });
   }
 });

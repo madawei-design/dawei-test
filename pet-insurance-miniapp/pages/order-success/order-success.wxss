@@ -1,0 +1,37 @@
+.success-card {
+  text-align: center;
+}
+
+.success-icon {
+  align-items: center;
+  background: #e7f5f2;
+  border-radius: 999rpx;
+  color: #0f7c6b;
+  display: inline-flex;
+  font-size: 42rpx;
+  font-weight: 800;
+  height: 100rpx;
+  justify-content: center;
+  width: 100rpx;
+}
+
+.block-title {
+  font-size: 30rpx;
+}
+
+.confirm-line {
+  border-top: 1rpx solid #edf0f3;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+
+.confirm-line:first-of-type {
+  border-top: 0;
+}
+
+.actions-stack {
+  display: grid;
+  gap: 16rpx;
+  margin-top: 24rpx;
+}
