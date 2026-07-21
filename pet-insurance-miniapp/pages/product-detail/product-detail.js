@@ -2,12 +2,16 @@ const { products } = require('../../utils/data');
 
 Page({
   data: {
-    product: null
+    product: null,
+    isDirectOrder: false
   },
 
   onLoad(options) {
     const product = products.find((item) => item.id === options.id);
-    this.setData({ product });
+    this.setData({
+      product,
+      isDirectOrder: product && product.id === 'dog-medical-flagship'
+    });
   },
 
   goQuote() {
@@ -16,5 +20,9 @@ Page({
 
   goProducts() {
     wx.switchTab({ url: '/pages/products/products' });
+  },
+
+  goOrder() {
+    wx.navigateTo({ url: '/pages/order/order?productId=' + this.data.product.id });
   }
 });

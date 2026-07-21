@@ -1,15 +1,17 @@
-const { readLatestQuote, readLeads } = require('../../utils/tracking');
+const { readLatestQuote, readLeads, readOrders } = require('../../utils/tracking');
 
 Page({
   data: {
     latestQuote: null,
-    leads: []
+    leads: [],
+    orders: []
   },
 
   onShow() {
     this.setData({
       latestQuote: readLatestQuote(),
-      leads: readLeads()
+      leads: readLeads(),
+      orders: readOrders()
     });
   },
 

@@ -21,6 +21,28 @@
   font-weight: 700;
 }
 
+.dog-feature {
+  background: linear-gradient(135deg, #fff7ed, #fff1d7);
+  border-color: #f5d8a8;
+  margin-bottom: 20rpx;
+}
+
+.feature-head {
+  align-items: flex-start;
+}
+
+.feature-badge {
+  background: #d56a2d;
+  border-radius: 999rpx;
+  color: #ffffff;
+  font-size: 22rpx;
+  padding: 8rpx 16rpx;
+}
+
+.feature-btn {
+  margin-top: 26rpx;
+}
+
 .product-card {
   margin-top: 20rpx;
 }
@@ -51,4 +73,8 @@
   grid-template-columns: repeat(3, 1fr);
   margin-top: 12rpx;
   padding-top: 20rpx;
+}
+
+.order-btn {
+  margin-top: 22rpx;
 }

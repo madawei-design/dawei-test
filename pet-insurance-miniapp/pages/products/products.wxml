@@ -1,4 +1,15 @@
 <view class="page">
+  <view class="card dog-feature">
+    <view class="row feature-head">
+      <view>
+        <view class="title product-title">狗狗医疗险专场</view>
+        <view class="subtitle">主打保障疾病门诊、住院和意外医疗，支持直接下单。</view>
+      </view>
+      <view class="feature-badge">新品</view>
+    </view>
+    <button class="primary-btn feature-btn" data-id="{{featuredDogProductId}}" bindtap="goOrder">立即下单</button>
+  </view>
+
   <view class="tabs">
     <view class="tab {{activeType === 'all' ? 'active' : ''}}" data-type="all" bindtap="setType">全部</view>
     <view class="tab {{activeType === 'cat' ? 'active' : ''}}" data-type="cat" bindtap="setType">猫咪</view>
@@ -22,5 +33,6 @@
       <view>免赔 {{item.deductible}} 元</view>
       <view>等待期 {{item.waitingPeriod}} 天</view>
     </view>
+    <button class="primary-btn order-btn" wx:if="{{item.id === featuredDogProductId}}" data-id="{{item.id}}" bindtap="goOrder">立即购买</button>
   </view>
 </view>

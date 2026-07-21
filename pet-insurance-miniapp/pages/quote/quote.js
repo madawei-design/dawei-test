@@ -24,6 +24,15 @@ Page({
     }
   },
 
+  onLoad(options) {
+    if (options && options.productId === 'dog-medical-flagship') {
+      this.setData({
+        'form.petType': 'dog',
+        'form.petTypeLabel': '狗'
+      });
+    }
+  },
+
   changePetType(event) {
     const option = petTypeOptions[Number(event.detail.value)];
     this.setData({

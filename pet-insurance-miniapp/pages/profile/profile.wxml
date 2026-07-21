@@ -7,6 +7,20 @@
   </view>
 
   <view class="section card">
+    <view class="title block-title">我的订单</view>
+    <view class="lead" wx:for="{{orders}}" wx:key="id">
+      <view class="row">
+        <view class="lead-name">{{item.productName}}</view>
+        <view class="status">{{item.status}}</view>
+      </view>
+      <view class="subtitle">投保人：{{item.form.ownerName}}</view>
+      <view class="subtitle">宠物：{{item.form.petName}} · {{item.form.dogBreed}}</view>
+      <view class="subtitle">预计年保费：¥{{item.annualPremium}}</view>
+    </view>
+    <view class="subtitle" wx:if="{{!orders.length}}">暂未提交订单。</view>
+  </view>
+
+  <view class="section card">
     <view class="title block-title">线索记录</view>
     <view class="lead" wx:for="{{leads}}" wx:key="id">
       <view class="row">
