@@ -21,6 +21,21 @@
   </view>
 
   <view class="section card">
+    <view class="title block-title">上门喂养预约</view>
+    <view class="lead" wx:for="{{feedingAppointments}}" wx:key="id">
+      <view class="row">
+        <view class="lead-name">{{item.form.petName}} · {{item.form.petType}}</view>
+        <view class="status">{{item.status}}</view>
+      </view>
+      <view class="subtitle">上门时间：{{item.form.serviceDate}} {{item.form.timeSlot}}</view>
+      <view class="subtitle">地址：{{item.form.address}}</view>
+      <view class="subtitle">联系人：{{item.form.contactName}}</view>
+    </view>
+    <view class="subtitle" wx:if="{{!feedingAppointments.length}}">暂无上门喂养预约。</view>
+    <button class="primary-btn submit" bindtap="goFeeding">新建预约</button>
+  </view>
+
+  <view class="section card">
     <view class="title block-title">线索记录</view>
     <view class="lead" wx:for="{{leads}}" wx:key="id">
       <view class="row">

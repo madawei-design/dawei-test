@@ -7,6 +7,8 @@
     "pages/result/result",
     "pages/order/order",
     "pages/order-success/order-success",
+    "pages/feeding/feeding",
+    "pages/feeding-success/feeding-success",
     "pages/profile/profile"
   ],
   "window": {

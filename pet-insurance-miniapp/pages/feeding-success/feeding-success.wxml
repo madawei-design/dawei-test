@@ -1,0 +1,22 @@
+<view class="page" wx:if="{{appointment}}">
+  <view class="card success-card">
+    <view class="success-icon">✓</view>
+    <view class="title">预约提交成功</view>
+    <view class="subtitle">喂养师将尽快联系你确认上门时间，请保持手机畅通。</view>
+  </view>
+
+  <view class="section card">
+    <view class="title block-title">预约信息</view>
+    <view class="confirm-line"><text class="muted">预约编号</text><text>{{appointment.id}}</text></view>
+    <view class="confirm-line"><text class="muted">宠物</text><text>{{appointment.form.petName}} · {{appointment.form.petType}} · {{appointment.form.petCount}}</text></view>
+    <view class="confirm-line"><text class="muted">上门时间</text><text>{{appointment.form.serviceDate}} {{appointment.form.timeSlot}}</text></view>
+    <view class="confirm-line"><text class="muted">服务地址</text><text>{{appointment.form.address}}</text></view>
+    <view class="confirm-line"><text class="muted">联系人</text><text>{{appointment.form.contactName}}</text></view>
+    <view class="confirm-line"><text class="muted">状态</text><text>{{appointment.status}}</text></view>
+  </view>
+
+  <view class="actions-stack">
+    <button class="primary-btn" bindtap="goProfile">查看预约记录</button>
+    <button class="secondary-btn" bindtap="goHome">返回首页</button>
+  </view>
+</view>

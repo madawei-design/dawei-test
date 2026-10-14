@@ -6,6 +6,7 @@
     <view class="hero-actions">
       <button class="primary-btn hero-btn" bindtap="goDogOrder">狗狗医疗险下单</button>
       <button class="secondary-btn hero-btn secondary-hero-btn" bindtap="goQuote">先测算保费</button>
+      <button class="secondary-btn hero-btn secondary-hero-btn" bindtap="goFeeding">宠物上门喂养预约</button>
     </view>
   </view>
 

@@ -1,21 +1,27 @@
-const { readLatestQuote, readLeads, readOrders } = require('../../utils/tracking');
+const { readLatestQuote, readLeads, readOrders, readFeedingAppointments } = require('../../utils/tracking');
 
 Page({
   data: {
     latestQuote: null,
     leads: [],
-    orders: []
+    orders: [],
+    feedingAppointments: []
   },
 
   onShow() {
     this.setData({
       latestQuote: readLatestQuote(),
       leads: readLeads(),
-      orders: readOrders()
+      orders: readOrders(),
+      feedingAppointments: readFeedingAppointments()
     });
   },
 
   goQuote() {
     wx.navigateTo({ url: '/pages/quote/quote' });
+  },
+
+  goFeeding() {
+    wx.navigateTo({ url: '/pages/feeding/feeding' });
   }
 });

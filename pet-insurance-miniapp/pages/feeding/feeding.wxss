@@ -1,0 +1,28 @@
+.order-hero {
+  background: linear-gradient(135deg, #eef9f6, #ffffff);
+}
+
+.block-title {
+  font-size: 30rpx;
+}
+
+.textarea {
+  height: 160rpx;
+  padding: 22rpx 24rpx;
+  width: 100%;
+}
+
+.agree-box {
+  margin-top: 4rpx;
+}
+
+.agree-label {
+  color: #4b5867;
+  display: flex;
+  font-size: 24rpx;
+  line-height: 1.6;
+}
+
+.submit {
+  margin-top: 24rpx;
+}

@@ -35,5 +35,9 @@ Page({
 
   goDogOrder() {
     wx.navigateTo({ url: '/pages/order/order?productId=' + this.data.featuredDogProductId });
+  },
+
+  goFeeding() {
+    wx.navigateTo({ url: '/pages/feeding/feeding' });
   }
 });
